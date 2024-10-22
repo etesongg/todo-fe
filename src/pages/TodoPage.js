@@ -13,7 +13,7 @@ const TodoPage = ({ setUser }) => {
 
   const getTasks = async () => {
     const response = await api.get("/tasks");
-    setTodoList(response.data.data);
+    setTodoList(response.data.data.reverse());
   };
   useEffect(() => {
     getTasks();
@@ -66,8 +66,10 @@ const TodoPage = ({ setUser }) => {
 
   return (
     <Container>
-      <span>
-        <span onClick={logout}>로그아웃</span>
+      <span className="logout-span-wrap">
+        <span className="logout-span" onClick={logout}>
+          LOGOUT
+        </span>
       </span>
       <Row className="add-item-row">
         <Col xs={12} sm={10}>
@@ -81,7 +83,7 @@ const TodoPage = ({ setUser }) => {
         </Col>
         <Col xs={12} sm={2}>
           <button onClick={addTodo} className="button-add">
-            추가
+            ADD
           </button>
         </Col>
       </Row>

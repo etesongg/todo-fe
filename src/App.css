@@ -1,11 +1,58 @@
+:root {
+  --basic-theme: #f2f2f2;
+  --line: #bbbbbb;
+  --second-bg: #dddddd;
+  --black: #000000;
+  --error-color: #e74c3c;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+}
+@font-face {
+  font-family: "Pretendard-Bold";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    format("woff");
+}
+@font-face {
+  font-family: "Pretendard-Black";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "Paperlogy-8ExtraBold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: "Paperlogy-6SemiBold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: "Paperlogy-5Medium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2")
+    format("woff2");
+}
+@font-face {
+  font-family: "Paperlogy-4Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2")
+    format("woff2");
+}
+
 body {
-  color: lightblue !important ;
-  background-color: aliceblue !important;
+  color: var(--black) !important ;
+  background-color: var(--basic-theme) !important;
+  font-family: "Paperlogy-6SemiBold", sans-serif;
 }
 
 .todo-item {
-  border: 1px solid lightblue;
-  background-color: white;
+  border: 1px solid var(--basic-theme);
+  background-color: var(--basic-theme);
+  border-bottom: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +67,8 @@ body {
 .input-box {
   padding: 10px;
   width: 100%;
-  border: 1px solid lightblue;
+  border: 1px solid var(--line);
+  background-color: var(--basic-theme);
 }
 .input-box:focus {
   outline: none;
@@ -33,18 +81,18 @@ button {
   height: 40px;
   width: 100%;
   border: none;
-  background-color: lightblue;
+  background-color: var(--black);
   color: white;
 }
 .button-add:hover {
-  background-color: white;
-  color: lightblue;
-  border: 2px solid lightblue;
+  background-color: var(--black);
+  color: white;
+  border: 2px solid var(--black);
 }
 .button-delete {
   background-color: white;
-  border: 2px solid lightblue;
-  color: lightblue;
+  border: 2px solid var(--black);
+  color: var(--black);
   margin: 10px;
 }
 .button-delete:hover {
@@ -58,10 +106,10 @@ button {
 }
 
 .login-box {
-  border: 1px solid lightblue;
+  border: 1px solid var(--basic-theme);
   max-width: 600px;
   width: 100%;
-  background-color: white;
+  background-color: var(--basic-theme);
   padding: 20px;
 }
 .login-box label {
@@ -81,12 +129,82 @@ button {
   justify-content: space-between;
 }
 
-.button-primary {
-  background-color: lightblue;
+.button-black {
+  background-color: var(--black);
   color: #ffffff;
   border: none;
+  border-radius: 0;
+  width: 360px;
+  height: 45px;
 }
 
 .red_error {
   color: red;
+}
+
+.login-header-h1,
+.register-header-h1 {
+  margin: 0;
+  font-family: "Paperlogy-8ExtraBold", sans-serif;
+  font-size: 30px;
+}
+
+.login-div {
+  width: 360px;
+  height: 250px;
+  padding: 40px 0px;
+}
+
+.register-div {
+  padding: 40px 0px;
+}
+
+.form-control {
+  background-color: var(--basic-theme);
+  border-radius: 0;
+  border: 1px solid var(--line) !important;
+  height: 45px;
+  width: 360px;
+}
+
+.form-control::placeholder {
+  color: var(--line);
+}
+
+.form-label {
+  font-size: 12px;
+  margin: 0;
+}
+
+span {
+  font-size: 10px;
+}
+
+button:hover {
+  background-color: black !important;
+}
+
+button:hover,
+button > a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 0 white;
+}
+
+.logout-span {
+  color: #0d6efd;
+  text-decoration: underline;
+  text-shadow: 0 0 0 #0d6efd;
+}
+
+.logout-span:hover {
+  color: #0c61e0;
+}
+
+.logout-span-wrap {
+  display: flex;
+  justify-content: right;
+}
+
+h2 {
+  font-family: "Paperlogy-8ExtraBold", sans-serif;
 }

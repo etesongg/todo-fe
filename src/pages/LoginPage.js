@@ -34,32 +34,35 @@ const LoginPage = ({ user, setUser }) => {
     <div className="display-center">
       {error && <div className="red_error">{error}</div>}
       <Form className="login-box" onSubmit={handleLogin}>
-        <h1>로그인</h1>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter email"
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </Form.Group>
+        <h1 class="login-header-h1">LOGIN</h1>
+        <h1 class="login-header-h1">TODO.TIME</h1>
+        <div class="login-div">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>EMAIL ADDRESS</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>PASSWORD</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </Form.Group>
+        </div>
         <div className="button-box">
-          <Button type="submit" className="button-primary">
+          <Button type="submit" className="button-black">
             Login
           </Button>
-          <span>
-            계정이 없다면? <Link to="/register">회원가입 하기</Link>
-          </span>
         </div>
+        <span>
+          NOT A MEMBER? <Link to="/register">Signup now</Link>
+        </span>
       </Form>
     </div>
   );
